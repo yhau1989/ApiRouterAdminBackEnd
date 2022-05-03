@@ -1,0 +1,12 @@
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\bin\Release\net6.0\Tools.deps.json
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\bin\Release\net6.0\Tools.dll
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\bin\Release\net6.0\ref\Tools.dll
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\bin\Release\net6.0\Tools.pdb
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\obj\Release\net6.0\Tools.csproj.AssemblyReference.cache
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\obj\Release\net6.0\Tools.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\obj\Release\net6.0\Tools.AssemblyInfoInputs.cache
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\obj\Release\net6.0\Tools.AssemblyInfo.cs
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\obj\Release\net6.0\Tools.csproj.CoreCompileInputs.cache
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\obj\Release\net6.0\Tools.dll
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\obj\Release\net6.0\ref\Tools.dll
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\Tools\obj\Release\net6.0\Tools.pdb

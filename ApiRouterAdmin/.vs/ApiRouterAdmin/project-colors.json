@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5e3da1f8-1966-4f43-a1bb-4ac5906c32b6": {
+      "ProjectGuid": "5e3da1f8-1966-4f43-a1bb-4ac5906c32b6",
+      "DisplayName": "ApiRouterAdmin",
+      "ColorIndex": 0
+    },
+    "06ee25e5-c6b1-4526-9c55-83fe6e03f5cb": {
+      "ProjectGuid": "06ee25e5-c6b1-4526-9c55-83fe6e03f5cb",
+      "DisplayName": "DbOracleContext.cs",
+      "ColorIndex": 1
+    },
+    "ca804446-9945-4850-aec7-6ad4eeecda57": {
+      "ProjectGuid": "ca804446-9945-4850-aec7-6ad4eeecda57",
+      "DisplayName": "Tools",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    },
+    "65f71bc3-ae79-4e23-b89e-ef45fea15fee": {
+      "ProjectGuid": "65f71bc3-ae79-4e23-b89e-ef45fea15fee",
+      "DisplayName": "Tools",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

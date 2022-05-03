@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5C8bTajw8lnvG0QYduc+lmCZ5xlUZK7kkj/PX6z8Dug=",
+  "Source": "ApiRouterAdmin",
+  "BasePath": "_content/ApiRouterAdmin",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
