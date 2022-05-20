@@ -3801,7 +3801,13 @@
     "net6.0": [
       "Microsoft.Data.SqlClient >= 4.1.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.14.0",
+      "NLog >= 4.7.13",
+      "NLog.Web.AspNetCore >= 4.14.0",
+      "Newtonsoft.Json >= 13.0.1",
+      "Oracle.ManagedDataAccess.Core >= 3.21.50",
+      "OracleClient >= 3.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3",
+      "System.Data.SqlClient >= 4.8.3",
       "Tools >= 1.0.0"
     ]
   },
@@ -3861,9 +3867,33 @@
             "target": "Package",
             "version": "[1.14.0, )"
           },
+          "NLog": {
+            "target": "Package",
+            "version": "[4.7.13, )"
+          },
+          "NLog.Web.AspNetCore": {
+            "target": "Package",
+            "version": "[4.14.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
+          "Oracle.ManagedDataAccess.Core": {
+            "target": "Package",
+            "version": "[3.21.50, )"
+          },
+          "OracleClient": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.2.3, )"
+          },
+          "System.Data.SqlClient": {
+            "target": "Package",
+            "version": "[4.8.3, )"
           }
         },
         "imports": [
@@ -3884,7 +3914,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
       }
     }
   }

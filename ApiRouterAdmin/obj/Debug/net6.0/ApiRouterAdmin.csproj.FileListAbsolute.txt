@@ -1,10 +1,4 @@
-C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.AssemblyInfoInputs.cache
-C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.AssemblyInfo.cs
-C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.csproj.CoreCompileInputs.cache
-C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.csproj.AssemblyReference.cache
-C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\appsettings.json
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\ApiRouterAdmin.exe
@@ -55,7 +49,6 @@ C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\run
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
-C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.dll
@@ -69,6 +62,13 @@ C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\run
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\Tools.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\Tools.pdb
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.csproj.AssemblyReference.cache
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.AssemblyInfoInputs.cache
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.AssemblyInfo.cs
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.csproj.CoreCompileInputs.cache
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\scopedcss\bundle\ApiRouterAdmin.styles.css
@@ -77,3 +77,4 @@ C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\Api
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ref\ApiRouterAdmin.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.pdb
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Debug\net6.0\ApiRouterAdmin.genruntimeconfig.cache
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Debug\net6.0\nlog.config

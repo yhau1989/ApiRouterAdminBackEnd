@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\Samuel\Desktop\AdminApiRouterBackEndDeploy</_PublishTargetUrl>
-    <History>True|2022-05-03T11:30:43.5507783Z;</History>
+    <History>True|2022-05-18T16:51:09.6144746Z;True|2022-05-18T09:27:53.7595909-05:00;True|2022-05-09T13:36:55.5890523-05:00;True|2022-05-08T14:39:34.4647723-05:00;True|2022-05-03T06:30:43.5507783-05:00;</History>
   </PropertyGroup>
 </Project>

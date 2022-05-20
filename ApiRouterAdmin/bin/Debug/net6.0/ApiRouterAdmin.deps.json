@@ -10,7 +10,13 @@
         "dependencies": {
           "Microsoft.Data.SqlClient": "4.1.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.14.0",
+          "NLog": "4.7.13",
+          "NLog.Web.AspNetCore": "4.14.0",
+          "Newtonsoft.Json": "13.0.1",
+          "Oracle.ManagedDataAccess.Core": "3.21.50",
+          "OracleClient": "3.0.0",
           "Swashbuckle.AspNetCore": "6.2.3",
+          "System.Data.SqlClient": "4.8.3",
           "Tools": "1.0.0"
         },
         "runtime": {
