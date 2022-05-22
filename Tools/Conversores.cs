@@ -22,7 +22,8 @@ namespace Tools
                     nombre = row.Field<string>("nombre"),
                     descripcion = row.Field<string>("descripcion"),
                     codigo = row.Field<string>("codigo"),
-                    dnsIpDestino = row.Field<string>("dnsIpDestino")
+                    dnsIpDestino = row.Field<string>("dnsIpDestino"),
+                    estado = row.Field<Int64>("estado"),
                 });
             }
 

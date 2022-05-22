@@ -77,3 +77,4 @@ C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Release\net6.0\A
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Release\net6.0\ref\ApiRouterAdmin.dll
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Release\net6.0\ApiRouterAdmin.pdb
 C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\obj\Release\net6.0\ApiRouterAdmin.genruntimeconfig.cache
+C:\Users\Samuel\GitHub\ApiRouterAdminBackEnd\ApiRouterAdmin\bin\Release\net6.0\nlog.config

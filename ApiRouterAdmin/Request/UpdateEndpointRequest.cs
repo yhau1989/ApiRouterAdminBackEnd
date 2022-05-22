@@ -9,5 +9,7 @@
         public string p_jsonResponseErrorDefault { get; set; }
         public string p_metodoRestApi { get; set; }
         public Int32 p_estado { get; set; }
+
+        public string auditoria { get; set; }
     }
 }

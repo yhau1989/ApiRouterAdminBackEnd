@@ -6,5 +6,7 @@
         public string descripcion { get; set; }
         public string codigo { get; set; }
         public string dnsIpDestino { get; set; }
+        public string auditoria { get; set; }
+
     }
 }

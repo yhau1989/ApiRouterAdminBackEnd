@@ -14,6 +14,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Tools;
 using static System.Net.Mime.MediaTypeNames;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace ApiRouterAdmin.Controllers
 {
@@ -43,7 +44,7 @@ namespace ApiRouterAdmin.Controllers
         {
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.login, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.login, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, "");
 
 
             DbOracleContext bd = new DbOracleContext();
@@ -51,7 +52,7 @@ namespace ApiRouterAdmin.Controllers
 
             DateTime time_fin = DateTime.Now;
             TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.login, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.login, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "");
 
 
             return result;
@@ -60,9 +61,11 @@ namespace ApiRouterAdmin.Controllers
         [Route("api/allappactives"), HttpGet]
         public async Task<ResponseMsg> getAllApps()
         {
+            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.getAllApps, inició de llamada", nameApp, "", null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.getAllApps, inició de llamada", nameApp , "", null, null, null, null, remoteIpAddress);
 
             DbOracleContext bd = new DbOracleContext();
             ResponseMsg result = bd.getAllAppsData();
@@ -70,9 +73,7 @@ namespace ApiRouterAdmin.Controllers
 
             DateTime time_fin = DateTime.Now;
             TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.getAllApps, fin de llamada", nameApp, "", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
-
-
+            log.writeLog_trace($"AdminController.getAllApps, fin de llamada", nameApp, "", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, remoteIpAddress);
 
             return result;
         }
@@ -80,16 +81,18 @@ namespace ApiRouterAdmin.Controllers
         [Route("api/allaendpoints"), HttpGet]
         public async Task<ResponseMsg> getAllEndPoints()
         {
+            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.getAllEndPoints, inició de llamada", nameApp, "", null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.getAllEndPoints, inició de llamada", nameApp, "", null, null, null, null, remoteIpAddress);
 
             DbOracleContext bd = new DbOracleContext();
             ResponseMsg result = bd.getAllEnpoints();
 
             DateTime time_fin = DateTime.Now;
             TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.getAllEndPoints, fin de llamada", nameApp, "", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.getAllEndPoints, fin de llamada", nameApp, "", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, remoteIpAddress);
 
             return result;
         }
@@ -97,16 +100,18 @@ namespace ApiRouterAdmin.Controllers
         [Route("api/addapp"), HttpPost]
         public async Task<ResponseMsg> addApp(AddAppRequest request)
         {
+            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.addApp, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.addApp, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, request.auditoria + $" , {remoteIpAddress}");
 
             DbOracleContext bd = new DbOracleContext();
             ResponseMsg result = bd.insertApp(request.nombre, request.descripcion, request.codigo, request.dnsIpDestino);
 
             DateTime time_fin = DateTime.Now;
             TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.addApp, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.addApp, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, request.auditoria + $" , {remoteIpAddress}");
 
             return result;
         }
@@ -114,17 +119,19 @@ namespace ApiRouterAdmin.Controllers
         [Route("api/updateapp"), HttpPost]
         public async Task<ResponseMsg> updateApp(UpdateAppRequest request)
         {
+            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.updateApp, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.updateApp, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, request.auditoria + $" , {remoteIpAddress}");
 
 
             DbOracleContext bd = new DbOracleContext();
             ResponseMsg result = bd.updateApp(request.nombre, request.descripcion, request.codigo, request.dnsIpDestino, request.estado);
 
             DateTime time_fin = DateTime.Now;
-            TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.updateApp, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
+            TimeSpan ts = time_fin - time_inicio; 
+            log.writeLog_trace($"AdminController.updateApp, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, request.auditoria + $" , {remoteIpAddress}");
 
             return result;
         }
@@ -133,9 +140,11 @@ namespace ApiRouterAdmin.Controllers
         [Route("api/addendpoint"), HttpPost]
         public async Task<ResponseMsg> addEndpoint(AddEndpointRequest request)
         {
+            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.addEndpoint, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.addEndpoint, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, request.auditoria + $" , {remoteIpAddress}");
 
 
             DbOracleContext bd = new DbOracleContext();
@@ -149,7 +158,7 @@ namespace ApiRouterAdmin.Controllers
 
             DateTime time_fin = DateTime.Now;
             TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.addEndpoint, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.addEndpoint, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, request.auditoria + $" , {remoteIpAddress}");
 
             return result;
         }
@@ -157,10 +166,11 @@ namespace ApiRouterAdmin.Controllers
         [Route("api/updateepoint"), HttpPost]
         public async Task<ResponseMsg> updateEndpoint(UpdateEndpointRequest request)
         {
+            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
 
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.updateEndpoint, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.updateEndpoint, inició de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", null, null, null, null, request.auditoria + $" , {remoteIpAddress}");
 
 
             DbOracleContext bd = new DbOracleContext();
@@ -174,7 +184,7 @@ namespace ApiRouterAdmin.Controllers
 
             DateTime time_fin = DateTime.Now;
             TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.updateEndpoint, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.updateEndpoint, fin de llamada", nameApp, $"request: {JsonConvert.SerializeObject(request)}", $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, request.auditoria + $" , {remoteIpAddress}");
 
 
             return result;
@@ -183,9 +193,11 @@ namespace ApiRouterAdmin.Controllers
         [Route("api/appbycode"), HttpGet]
         public async Task<ResponseMsg> getAppByCode(string codeApp)
         {
+            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.getAppByCode, inició de llamada", nameApp, codeApp, null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.getAppByCode, inició de llamada", nameApp, codeApp, null, null, null, null, remoteIpAddress);
 
 
             DbOracleContext bd = new DbOracleContext();
@@ -193,8 +205,7 @@ namespace ApiRouterAdmin.Controllers
 
             DateTime time_fin = DateTime.Now;
             TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.getAppByCode, fin de llamada", nameApp, codeApp, $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
-
+            log.writeLog_trace($"AdminController.getAppByCode, fin de llamada", nameApp, codeApp, $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, remoteIpAddress);
 
             return result;
         }
@@ -202,34 +213,37 @@ namespace ApiRouterAdmin.Controllers
         [Route("api/endpointsbyidap"), HttpGet]
         public async Task<ResponseMsg> endpointsByIdApp(string idApp)
         {
+            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.endpointsByIdApp, inició de llamada", nameApp, idApp, null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.endpointsByIdApp, inició de llamada", nameApp, idApp, null, null, null, null, remoteIpAddress);
 
             DbOracleContext bd = new DbOracleContext();
             ResponseMsg result = bd.endpointsByIdApp(idApp);
 
             DateTime time_fin = DateTime.Now;
             TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.endpointsByIdApp, fin de llamada", nameApp, idApp, $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
-
+            log.writeLog_trace($"AdminController.endpointsByIdApp, fin de llamada", nameApp, idApp, $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, remoteIpAddress);
 
             return result;
         }
 
         [Route("api/removeendpoint"), HttpPost]
-        public async Task<ResponseMsg> deleteEndpointsById(string id)
+        public async Task<ResponseMsg> deleteEndpointsById(string id, string auditoria)
         {
+            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
             DateTime time_inicio = DateTime.Now;
             MakeLog log = new MakeLog(logger);
-            log.writeLog_trace($"AdminController.deleteEndpointsById, inició de llamada", nameApp, id, null, null, null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.deleteEndpointsById, inició de llamada", nameApp, id, null, null, null, null, auditoria + $" , {remoteIpAddress}");
 
             DbOracleContext bd = new DbOracleContext();
             ResponseMsg result = bd.deleteEndPoint(id);
 
             DateTime time_fin = DateTime.Now;
             TimeSpan ts = time_fin - time_inicio;
-            log.writeLog_trace($"AdminController.deleteEndpointsById, fin de llamada", nameApp, id, $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, "AppAdmintradorRouter");
+            log.writeLog_trace($"AdminController.deleteEndpointsById, fin de llamada", nameApp, id, $"response: {JsonConvert.SerializeObject(result)}", ts.ToString(@"hh\:mm\:ss\.fff"), null, null, auditoria + $" , {remoteIpAddress}");
 
             return result;
         }
