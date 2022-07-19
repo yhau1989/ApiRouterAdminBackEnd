@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace Tools
 {
+    /// <summary>
+    /// Clase para convertir dataTable de Oracle a DataTables de c#
+    /// </summary>
+    /// <![CDATA[ 
+    /// Autor: UNICOMER
+    /// fecha creación: 19-07-022
+    /// ]]>
     public class Conversores
     {
 

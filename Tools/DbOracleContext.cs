@@ -37,6 +37,14 @@ namespace Tools
 
         }
 
+
+        /// <summary>
+        /// Valida el proceso del login
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg checkAuth(string user, string pass)
         {
             string funcion = "DbOracleContext.checkAuth";
@@ -105,6 +113,14 @@ namespace Tools
 
         }
 
+
+        /// <summary>
+        /// obtiene todas las app del sistema desde la base de datos
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg getAllAppsData()
         {
             string funcion = "DbOracleContext.getAllAppsData";
@@ -180,6 +196,14 @@ namespace Tools
 
         }
 
+
+        /// <summary>
+        /// obtiene todos los endpoints de las app del sistema desde la base de datos
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg getAllEnpoints()
         {
             string funcion = "DbOracleContext.getAllEnpoints";
@@ -255,6 +279,14 @@ namespace Tools
 
         }
 
+
+        /// <summary>
+        /// inserta aplicativo en la base de datos
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg insertApp(string p_nombre,
                                        string p_descripcion,
                                        string p_codigo,
@@ -323,6 +355,15 @@ namespace Tools
         }
 
 
+
+
+        /// <summary>
+        /// actualiza aplicativo en la base de datos
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg updateApp(string p_nombre,
                                       string p_descripcion,
                                       string p_codigo,
@@ -391,6 +432,16 @@ namespace Tools
 
         }
 
+
+
+
+        /// <summary>
+        /// inserta endpoints para los aplicativo en la base de datos
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg insertEnpoints(Int64 p_aplicacion,
                                             string p_path,
                                             string p_descripcion,
@@ -467,6 +518,14 @@ namespace Tools
         }
 
 
+
+        /// <summary>
+        /// actualiza los endpoints para los aplicativo en la base de datos
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg updateEnpoint(Int64 p_id,
                                             string p_path,
                                             string p_descripcion,
@@ -543,6 +602,15 @@ namespace Tools
         }
 
 
+
+
+        /// <summary>
+        /// Valida aplicativos por el codigo del mismo
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg checkAppByCode(string codeApp)
         {
             string funcion = "DbOracleContext.checkAppByCode";
@@ -622,6 +690,15 @@ namespace Tools
 
         }
 
+
+
+        /// <summary>
+        /// Valida endpoints por el codigo del mismo
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg endpointsByIdApp(string idApp)
         {
             string funcion = "DbOracleContext.endpointsByIdApp";
@@ -702,6 +779,14 @@ namespace Tools
         }
 
 
+
+        /// <summary>
+        /// elimina endpoints por el codigo del mismo.
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public ResponseMsg deleteEndPoint(string id)
         {
             string funcion = "DbOracleContext.deleteEndPoint";

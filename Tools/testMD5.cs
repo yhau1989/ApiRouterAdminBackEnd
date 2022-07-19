@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace Tools
 {
+    /// <summary>
+    /// clase encriptar y desencriptar texto
+    /// </summary>
+    /// <![CDATA[ 
+    /// Autor: UNICOMER
+    /// fecha creación: 19-07-022
+    /// ]]>
     public class testMD5
     {
 

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Tools
 {
-    public  class ListsApps
+    /// <summary>
+    /// clase base
+    /// </summary>
+    /// <![CDATA[ 
+    /// Autor: UNICOMER
+    /// fecha creación: 19-07-022
+    /// ]]>
+    public class ListsApps
     {
         public Int64 id { get; set; }
         public string nombre { get; set; }

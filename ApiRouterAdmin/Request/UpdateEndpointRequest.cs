@@ -1,5 +1,12 @@
 ﻿namespace ApiRouterAdmin.Request
 {
+    /// <summary>
+    /// Clase base
+    /// </summary>
+    /// <![CDATA[ 
+    /// Autor: UNICOMER
+    /// fecha creación: 19-07-022
+    /// ]]>
     public class UpdateEndpointRequest
     {
         public Int64 p_id { get; set; }

@@ -18,6 +18,13 @@ using Microsoft.AspNetCore.HttpOverrides;
 
 namespace ApiRouterAdmin.Controllers
 {
+    /// <summary>
+    /// Clase para el manejo del controlador del administrador del endpoint /api
+    /// </summary>
+    /// <![CDATA[ 
+    /// Autor: UNICOMER
+    /// fecha creación: 19-07-022
+    /// ]]>
     [ApiController]
     public class AdminController : Controller
     {

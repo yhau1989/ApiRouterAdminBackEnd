@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Tools
 {
+    /// <summary>
+    /// Clase base
+    /// </summary>
+    /// <![CDATA[ 
+    /// Autor: UNICOMER
+    /// fecha creación: 19-07-022
+    /// ]]>
     public class App
     {
         public Int64 id { get; set; }

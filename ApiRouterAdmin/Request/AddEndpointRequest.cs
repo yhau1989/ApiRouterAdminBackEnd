@@ -1,5 +1,12 @@
 ﻿namespace ApiRouterAdmin.Request
 {
+    /// <summary>
+    /// Clase base
+    /// </summary>
+    /// <![CDATA[ 
+    /// Autor: UNICOMER
+    /// fecha creación: 19-07-022
+    /// ]]>
     public class AddEndpointRequest
     {
         public Int64 p_aplicacion { get; set; }

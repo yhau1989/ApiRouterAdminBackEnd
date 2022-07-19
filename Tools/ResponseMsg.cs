@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace Tools
 {
+    /// <summary>
+    /// clase base
+    /// </summary>
+    /// <![CDATA[ 
+    /// Autor: UNICOMER
+    /// fecha creación: 19-07-022
+    /// ]]>
     public class ResponseMsg
     {
         public int status { get; set; }
