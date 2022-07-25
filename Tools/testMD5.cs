@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace Tools
 {
     /// <summary>
-    /// clase encriptar y desencriptar texto
+    /// Clase para encriptrar y desencriptar texto
     /// </summary>
     /// <![CDATA[ 
-    /// Autor: UNICOMER
+    /// Autor: Samuel Pilay - UNICOMER
     /// fecha creación: 19-07-022
     /// ]]>
     public class testMD5
@@ -21,6 +21,15 @@ namespace Tools
 
         static string passphrase = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes("xxxTokenxxx")).ToString();
 
+        /// <summary>
+        /// Encripta una cadenna de texto
+        /// </summary>
+        /// <param name="message">Cadena de texto a encriptar</param>
+        /// <returns>Cadena de texto encriptada</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public static string encrypt(string message)
         {
             byte[] results;
@@ -60,6 +69,16 @@ namespace Tools
 
         }
 
+
+        /// <summary>
+        /// Decripta una cadenna de texto
+        /// </summary>
+        /// <param name="message">Cadena de texto encriptada</param>
+        /// <returns>Cadena de texto desencriptada</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public static string decrypt(string message)
         {
 

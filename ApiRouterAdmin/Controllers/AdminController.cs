@@ -6,7 +6,6 @@ using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NLog;
-//using NLog;
 using System.Collections;
 using System.Data;
 using System.Net.Http.Headers;
@@ -22,7 +21,7 @@ namespace ApiRouterAdmin.Controllers
     /// Clase para el manejo del controlador del administrador del endpoint /api
     /// </summary>
     /// <![CDATA[ 
-    /// Autor: UNICOMER
+    /// Autor: Samuel Pilay - UNICOMER
     /// fecha creación: 19-07-022
     /// ]]>
     [ApiController]
@@ -35,6 +34,15 @@ namespace ApiRouterAdmin.Controllers
         private string nameApp;
 
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="configuration">objeto interzas</param>
+        /// <param name="httpClientFactory">objeto interzas</param>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public AdminController(IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
             _config = configuration;
@@ -46,6 +54,16 @@ namespace ApiRouterAdmin.Controllers
             nameApp = config.GetValue<string>("nameApp");
         }
 
+
+        /// <summary>
+        /// Realiza el proceso de login contra la base de datos
+        /// </summary>
+        /// <param name="request">Clase base LoginRequest</param>
+        /// <returns>ResponseMsg clase base</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/login"), HttpPost]
         public async Task<ResponseMsg> login(LoginRequest request)
         {
@@ -65,6 +83,15 @@ namespace ApiRouterAdmin.Controllers
             return result;
         }
 
+
+        /// <summary>
+        /// Retorna una lista de la base de datos
+        /// </summary>
+        /// <returns>ResponseMsg Objeto Base</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/allappactives"), HttpGet]
         public async Task<ResponseMsg> getAllApps()
         {
@@ -85,6 +112,15 @@ namespace ApiRouterAdmin.Controllers
             return result;
         }
 
+
+        /// <summary>
+        /// Retorna una lista con todos los endpoint desde la base de datos
+        /// </summary>
+        /// <returns>ResponseMsg Objeto Base</returns>
+        /// /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/allaendpoints"), HttpGet]
         public async Task<ResponseMsg> getAllEndPoints()
         {
@@ -104,6 +140,16 @@ namespace ApiRouterAdmin.Controllers
             return result;
         }
 
+
+        /// <summary>
+        /// Agrega una nueva app a la base de datos
+        /// </summary>
+        /// <param name="request">Clase base AddAppRequest</param>
+        /// <returns>ResponseMsg Objeto Base</returns>
+        /// /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/addapp"), HttpPost]
         public async Task<ResponseMsg> addApp(AddAppRequest request)
         {
@@ -123,6 +169,16 @@ namespace ApiRouterAdmin.Controllers
             return result;
         }
 
+
+        /// <summary>
+        /// Actualiza la informacion de una app existente en la base de datos.
+        /// </summary>
+        /// <param name="request">Clase base UpdateAppRequest</param>
+        /// <returns>ResponseMsg Objeto Base</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/updateapp"), HttpPost]
         public async Task<ResponseMsg> updateApp(UpdateAppRequest request)
         {
@@ -144,6 +200,15 @@ namespace ApiRouterAdmin.Controllers
         }
 
 
+        /// <summary>
+        /// Agrega un nuevo endpoint a una app existente en la base de datos.
+        /// </summary>
+        /// <param name="request">Clase base AddEndpointRequest</param>
+        /// <returns>ResponseMsg Objeto Base</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/addendpoint"), HttpPost]
         public async Task<ResponseMsg> addEndpoint(AddEndpointRequest request)
         {
@@ -170,6 +235,16 @@ namespace ApiRouterAdmin.Controllers
             return result;
         }
 
+
+        /// <summary>
+        /// Actualiza un endpoint de una app existente en la base de datos.
+        /// </summary>
+        /// <param name="request">Clase base UpdateEndpointRequest</param>
+        /// <returns>ResponseMsg Objeto Base</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/updateepoint"), HttpPost]
         public async Task<ResponseMsg> updateEndpoint(UpdateEndpointRequest request)
         {
@@ -197,6 +272,15 @@ namespace ApiRouterAdmin.Controllers
             return result;
         }
 
+        /// <summary>
+        /// Retorna todos los datos de una app segun su codigo unico
+        /// </summary>
+        /// <param name="codeApp">Cosdigo de la app</param>
+        /// <returns>ResponseMsg Objeto Base</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/appbycode"), HttpGet]
         public async Task<ResponseMsg> getAppByCode(string codeApp)
         {
@@ -217,6 +301,16 @@ namespace ApiRouterAdmin.Controllers
             return result;
         }
 
+
+        /// <summary>
+        /// Retorna una lista de endpoints de una app segun su id de App
+        /// </summary>
+        /// <param name="idApp"></param>
+        /// <returns>ResponseMsg Objeto Base</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/endpointsbyidap"), HttpGet]
         public async Task<ResponseMsg> endpointsByIdApp(string idApp)
         {
@@ -236,6 +330,17 @@ namespace ApiRouterAdmin.Controllers
             return result;
         }
 
+
+        /// <summary>
+        /// Elimina un endpoint existente en la base de datos 
+        /// </summary>
+        /// <param name="id">id del Endpoint</param>
+        /// <param name="auditoria"></param>
+        /// <returns>ResponseMsg Objeto Base</returns>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         [Route("api/removeendpoint"), HttpPost]
         public async Task<ResponseMsg> deleteEndpointsById(string id, string auditoria)
         {

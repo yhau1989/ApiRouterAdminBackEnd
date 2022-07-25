@@ -12,6 +12,13 @@ using NLog;
 
 namespace Tools
 {
+    /// <summary>
+    /// Clase que permite la conexion con bases de datos Oracle
+    /// </summary>
+    /// <![CDATA[ 
+    /// Autor: Samuel Pilay - UNICOMER
+    /// fecha creación: 19-07-022
+    /// ]]>
     public class DbOracleContext
     {
         private string cConexion, nameApp = "";
@@ -20,6 +27,13 @@ namespace Tools
         private OracleConnection connection = null;
         private Logger logger = null;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
         public DbOracleContext()
         {
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: false);
@@ -39,12 +53,16 @@ namespace Tools
 
 
         /// <summary>
-        /// Valida el proceso del login
+        /// Valida el proceso del login contra la base de datos
         /// </summary>
+        /// <param name="user">edentificacion del usuario (correo, cedula, etc)</param>
+        /// <param name="pass">clave del usuario</param>
+        /// <returns>ResponseMsg clase base</returns>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
+
         public ResponseMsg checkAuth(string user, string pass)
         {
             string funcion = "DbOracleContext.checkAuth";
@@ -117,8 +135,9 @@ namespace Tools
         /// <summary>
         /// obtiene todas las app del sistema desde la base de datos
         /// </summary>
+        /// <returns>ResponseMsg clase base</returns>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
         public ResponseMsg getAllAppsData()
@@ -201,7 +220,7 @@ namespace Tools
         /// obtiene todos los endpoints de las app del sistema desde la base de datos
         /// </summary>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
         public ResponseMsg getAllEnpoints()
@@ -281,10 +300,15 @@ namespace Tools
 
 
         /// <summary>
-        /// inserta aplicativo en la base de datos
+        /// inserta nuevo aplicativo en la base de datos
         /// </summary>
+        /// <param name="p_nombre">Nommbre de la app</param>
+        /// <param name="p_descripcion">Descripcion de la app</param>
+        /// <param name="p_codigo">Codigo unico de la app</param>
+        /// <param name="p_dnsIpDestino">Ip/Dns de destino del app</param>
+        /// <returns>ResponseMsg clase base</returns>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
         public ResponseMsg insertApp(string p_nombre,
@@ -360,8 +384,14 @@ namespace Tools
         /// <summary>
         /// actualiza aplicativo en la base de datos
         /// </summary>
+        /// <param name="p_nombre">Nommbre de la app</param>
+        /// <param name="p_descripcion">Descripcion de la app</param>
+        /// <param name="p_codigo">Codigo unico de la app</param>
+        /// <param name="p_dnsIpDestino">Ip/Dns de destino del app</param>
+        /// <param name="p_estado">Codigo de estado (activo/inactivo)</param>
+        /// <returns>ResponseMsg clase base</returns>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
         public ResponseMsg updateApp(string p_nombre,
@@ -438,8 +468,16 @@ namespace Tools
         /// <summary>
         /// inserta endpoints para los aplicativo en la base de datos
         /// </summary>
+        /// <param name="p_aplicacion">id de aplicativo</param>
+        /// <param name="p_path">path del endpoint</param>
+        /// <param name="p_descripcion">descripcion del endpoint </param>
+        /// <param name="p_jsonRequest">json de ejemplo del request del endpoint</param>
+        /// <param name="p_jsonResponseErrorDefault">json de ejemplo del response de error del endpoint</param>
+        /// <param name="p_metodoRestApi">metodo http</param>
+        /// <param name="p_estado">Codigo de estado (activo/inactivo)</param>
+        /// <returns>ResponseMsg clase base</returns>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
         public ResponseMsg insertEnpoints(Int64 p_aplicacion,
@@ -520,10 +558,22 @@ namespace Tools
 
 
         /// <summary>
-        /// actualiza los endpoints para los aplicativo en la base de datos
+        /// Actualiza los endpoints para los aplicativo en la base de datos
         /// </summary>
+        /// <param name="p_id">id del endpoint </param>
+        /// <param name="p_path">path del endpoint</param>
+        /// <param name="p_descripcion">descripcion del endpoint</param>
+        /// <param name="p_jsonRequest">json de ejemplo del request del endpoint</param>
+        /// <param name="p_jsonResponseErrorDefault">json de ejemplo del response de error del endpoint</param>
+        /// <param name="p_metodoRestApi">metodo http</param>
+        /// <param name="p_estado">Codigo de estado (activo/inactivo)</param>
+        /// <returns>ResponseMsg clase base</returns>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
+        /// fecha creación: 19-07-022
+        /// ]]>
+        /// <![CDATA[ 
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
         public ResponseMsg updateEnpoint(Int64 p_id,
@@ -607,8 +657,9 @@ namespace Tools
         /// <summary>
         /// Valida aplicativos por el codigo del mismo
         /// </summary>
+        /// <param name="codeApp">Codigo unico del app </param>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
         public ResponseMsg checkAppByCode(string codeApp)
@@ -695,8 +746,9 @@ namespace Tools
         /// <summary>
         /// Valida endpoints por el codigo del mismo
         /// </summary>
+        /// <param name="idApp">id del app </param>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
         public ResponseMsg endpointsByIdApp(string idApp)
@@ -783,8 +835,9 @@ namespace Tools
         /// <summary>
         /// elimina endpoints por el codigo del mismo.
         /// </summary>
+        /// <param name="id">id del endpoint </param>
         /// <![CDATA[ 
-        /// Autor: UNICOMER
+        /// Autor: Samuel Pilay - UNICOMER
         /// fecha creación: 19-07-022
         /// ]]>
         public ResponseMsg deleteEndPoint(string id)
